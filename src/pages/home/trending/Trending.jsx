@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
 import useFetch from "../../../hooks/useFetch";
 import SwitchTabs from "../../../components/switchTabs/SwitchTabs";
+import Carousel from "../../../components/carousel/Carousel";
 const Trending = () => {
   //get trending page endpoint from doc :'/trending/{media_type}/{time_window}' .. time window may be it is day or week and media type is ;- all,movie,tv,person
   const [endpoint, setEndpoint] = useState("day");
@@ -20,6 +21,7 @@ const Trending = () => {
         <SwitchTabs data={["Day", "Week"]} onTabChange={onTabChange} />
       </ContentWrapper>
       {/* to view the carausel */}
+      <Carousel data={data?.results} loading={loading} />
     </div>
   );
 };
