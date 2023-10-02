@@ -15,7 +15,7 @@ import PosterFallback from "../../assets/no-poster.png";
 import Genres from "../genres/Genres";
 import "./style.scss";
 
-const Carousel = ({ data, loading }) => {
+const Carousel = ({ data, loading, endpoint }) => {
   const carouselContainer = useRef(); // kisi bhi element of select krne ke liye useRef use krte hai jaise js mein document.query.selector like css mein bhi
 
   const { url } = useSelector((state) => state.home);
@@ -70,7 +70,9 @@ const Carousel = ({ data, loading }) => {
                 <div
                   key={item.id}
                   className="carouselItem"
-                  onClick={() => navigate(`/${item.media_type}/${item.id}`)}
+                  onClick={() =>
+                    navigate(`/${item.media_type || endpoint}/${item.id}`)
+                  }
                 >
                   <div className="posterBlock">
                     <Img src={posterUrl} />
