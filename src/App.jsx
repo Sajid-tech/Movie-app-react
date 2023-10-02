@@ -40,7 +40,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      {/* <Header /> */}
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         {/* media type : means its is movie or tv show  */}
