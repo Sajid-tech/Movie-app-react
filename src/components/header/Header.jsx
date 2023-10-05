@@ -74,7 +74,18 @@ const Header = () => {
     <header className={`header ${mobileMenu ? "mobileView" : ""} ${show}`}>
       <ContentWrapper>
         <div className="logo" onClick={() => navigate("/")}>
-          <img src={logo} alt="" />
+          {/* <img src={logo} alt="" /> */}
+          <span
+            className="text bold"
+            style={{
+              color: "white",
+              fontWeight: "bold",
+              fontSize: "35px",
+              fontFamily: "batangas",
+            }}
+          >
+            MOVIEFLIX
+          </span>
         </div>
         <ul className="menuItems">
           <li className="menuItem" onClick={() => navigationHandler("movie")}>
