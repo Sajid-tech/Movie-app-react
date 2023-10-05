@@ -27,6 +27,8 @@ function App() {
     fetchDataFromApi("/configuration").then((res) => {
       console.log(res);
 
+      // url.backdrop +data.backdrop  ye img get krne ke liye hai
+
       const url = {
         backdrop: res.images.secure_base_url + "original",
         poster: res.images.secure_base_url + "original",

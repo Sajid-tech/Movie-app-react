@@ -15,7 +15,7 @@ import PosterFallback from "../../assets/no-poster.png";
 import Genres from "../genres/Genres";
 import "./style.scss";
 
-const Carousel = ({ data, loading, endpoint }) => {
+const Carousel = ({ data, loading, endpoint, title }) => {
   const carouselContainer = useRef(); // kisi bhi element of select krne ke liye useRef use krte hai jaise js mein document.query.selector like css mein bhi
 
   const { url } = useSelector((state) => state.home);
@@ -51,6 +51,8 @@ const Carousel = ({ data, loading, endpoint }) => {
   return (
     <div className="carousel">
       <ContentWrapper>
+        {/* ye title recommendations and similar se send kr rhe hai  */}
+        {title && <div className="carouselTitle">{title}</div>}
         <BsFillArrowLeftCircleFill
           className="carouselLeftNav arrow"
           onClick={() => navigation("left")}
